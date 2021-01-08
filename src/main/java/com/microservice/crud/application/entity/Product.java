@@ -29,9 +29,8 @@ public class Product implements Serializable {
     @Column(name = "price", nullable = false)
     private Double price;
 
-    public static Product create(ProductVO productVO){
+    public static Product create(ProductVO productVO) {
         return new ModelMapper()
-                .map(productVO,Product.class);
+                .map(productVO, Product.class);
     }
-
 }

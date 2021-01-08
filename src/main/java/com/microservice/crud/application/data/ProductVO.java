@@ -26,8 +26,8 @@ public class ProductVO implements Serializable {
     @JsonProperty("price")
     private Double price;
 
-    public static ProductVO create(Product product){
+    public static ProductVO create(Product product) {
         return new ModelMapper()
-                .map(product,ProductVO.class);
+                .map(product, ProductVO.class);
     }
 }
