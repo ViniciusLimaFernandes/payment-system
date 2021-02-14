@@ -3,6 +3,7 @@ package com.microservice.crud.application.entity;
 import com.microservice.crud.application.data.ProductVO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Table(name = "Product")
 public class Product implements Serializable {
 
