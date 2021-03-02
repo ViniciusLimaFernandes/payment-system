@@ -6,13 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductVO implements Serializable {
+public class ProductVO extends RepresentationModel<ProductVO> implements Serializable {
 
     @JsonProperty("id")
     private Long id;
