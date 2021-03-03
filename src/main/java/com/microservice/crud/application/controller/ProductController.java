@@ -21,7 +21,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
-@RequestMapping("/api/v1/produto")
+@RequestMapping("/api/v1/product")
 public class ProductController  {
 
     @Autowired
@@ -37,7 +37,7 @@ public class ProductController  {
         return productVO;
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
+    @GetMapping(produces = "application/json")
     public ResponseEntity<?> findAll (@RequestParam(value = "page", defaultValue = "0") int page,
                              @RequestParam(value = "limit", defaultValue = "12") int limit,
                              @RequestParam(value = "direction", defaultValue = "asc") String direction){
@@ -54,4 +54,5 @@ public class ProductController  {
 
         return ResponseEntity.ok(pagedModel);
     }
+    
 }
