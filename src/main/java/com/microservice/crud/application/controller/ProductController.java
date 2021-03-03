@@ -54,5 +54,13 @@ public class ProductController  {
 
         return ResponseEntity.ok(pagedModel);
     }
-    
+
+    @PostMapping(produces = "application/json", consumes = "application/json")
+    public ProductVO create(@RequestBody ProductVO productVO){
+        ProductVO productVORes = productService.create(productVO);
+
+        productVORes.add(linkTo(methodOn(ProductController.class).findByID(productVO.getId())).withSelfRel());
+
+        return productVORes;
+    }
 }
