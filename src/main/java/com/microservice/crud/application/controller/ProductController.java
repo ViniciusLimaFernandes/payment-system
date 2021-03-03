@@ -63,4 +63,13 @@ public class ProductController  {
 
         return productVORes;
     }
+
+    @PutMapping(produces = "application/json", consumes = "application/json")
+    public ProductVO update(@RequestBody ProductVO productVO){
+        ProductVO productVORes = productService.update(productVO);
+
+        productVORes.add(linkTo(methodOn(ProductController.class).findByID(productVO.getId())).withSelfRel());
+
+        return productVORes;
+    }
 }
