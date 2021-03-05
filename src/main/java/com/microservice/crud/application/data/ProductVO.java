@@ -2,15 +2,14 @@ package com.microservice.crud.application.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microservice.crud.application.entity.Product;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductVO extends RepresentationModel<ProductVO> implements Serializable {
