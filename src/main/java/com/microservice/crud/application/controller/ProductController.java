@@ -40,7 +40,7 @@ public class ProductController  {
 
         Sort.Direction sortDirection = "desc".equalsIgnoreCase(direction) ? Sort.Direction.DESC : Sort.Direction.ASC;
 
-        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "nome"));
+        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "name"));
 
         Page<ProductVO> products = productService.findAll(pageable);
 
