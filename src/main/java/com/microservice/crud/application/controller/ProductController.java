@@ -38,9 +38,11 @@ public class ProductController  {
                              @RequestParam(value = "limit", defaultValue = "12") int limit,
                              @RequestParam(value = "direction", defaultValue = "asc") String direction){
 
+        final String propertyReference = "name";
+
         Sort.Direction sortDirection = "desc".equalsIgnoreCase(direction) ? Sort.Direction.DESC : Sort.Direction.ASC;
 
-        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "name"));
+        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, propertyReference));
 
         Page<ProductVO> products = productService.findAll(pageable);
 
