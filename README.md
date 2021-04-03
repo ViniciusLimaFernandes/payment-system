@@ -1,2 +1,2 @@
 # stock-management-api
-A CRUD payment system using Spring Boot
+A CRUD stock system using Spring Boot
